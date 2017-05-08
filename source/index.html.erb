@@ -2,7 +2,7 @@
 title: Le Wagon Middleman boilerplate
 ---
 
-   <div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('images/background.jpg');">
+   <div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path "background.jpg" %>);">
       <div class="banner-content">
         <h1>WELCOME HOME</h1>
         <p>Rent unique places to stay from local hosts in 190+ countries.</p>
@@ -13,22 +13,22 @@ title: Le Wagon Middleman boilerplate
     <div class="container text-center padded features">
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-3">
-          <img src="images/globe.png" alt="">
+          <%= image_tag "globe.png" %>
           <h2>Discover the world</h2>
           <p>The earth is your new home.</p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3">
-          <img src="images/dollar.png" alt="">
+          <%= image_tag "dollar.png" %>
           <h2>Pay online</h2>
           <p>No cash issues anymore.</p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3">
-          <img src="images/beer.png" alt="">
+          <%= image_tag "beer.png" %>
           <h2>Meet people</h2>
           <p>Discover new culture and lifestyle.</p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3">
-          <img src="images/heart.png" alt="">
+          <%= image_tag "heart.png" %>
           <h2>Share and love</h2>
           <p>Join a community you will love.</p>
         </div>
@@ -40,35 +40,37 @@ title: Le Wagon Middleman boilerplate
         <h2 class="text-center">Your next trip</h2>
         <div class="row">
           <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
+            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path "card-paris.jpg" %>);">
               <div class="card-category">Paris</div>
               <div class="card-description">
                 <h2>Seb's home</h2>
                 <p>Charming room with patio</p>
               </div>
-              <img class="card-user avatar avatar-large" src="images/seb.jpg">
+              <%= image_tag "seb.jpg", class: "img-rounded card-user avatar avatar-large" %>
               <a class="card-link" href="#" ></a>
             </div>
           </div>
           <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-brussels.jpeg');">
+            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path "card-brussels.jpeg" %>);">
               <div class="card-category">Brussels</div>
               <div class="card-description">
                 <h2>Anne's home</h2>
                 <p>Lovely house</p>
               </div>
-              <img class="card-user avatar avatar-large" src="images/anne.jpg">
+               <%= image_tag "anne.jpg", class: "img-rounded card-user avatar avatar-large" %>
+
               <a class="card-link" href="#" ></a>
             </div>
           </div>
           <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-london.jpeg');">
+            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path "card-london.jpeg" %>);">
               <div class="card-category">London</div>
               <div class="card-description">
                 <h2>Romain's home</h2>
                 <p>Nice flat in Piccadilly</p>
               </div>
-              <img class="card-user avatar avatar-large" src="images/romain.jpeg">
+               <%= image_tag "romain.jpeg", class: "img-rounded card-user avatar avatar-large" %>
+
               <a class="card-link" href="#" ></a>
             </div>
           </div>
@@ -80,7 +82,7 @@ title: Le Wagon Middleman boilerplate
       <h2>Get news from us</h2>
       <p>Leave us your mail and get news from us</p>
       <form class="form-inline">
-        <input type="email" placeholder="bob@gmail.com" class="form-control">
+        <input type="email" placeholder="alden@gmail.com" class="form-control">
         <input type="submit" value="Subscribe" class="btn btn-primary btn-bordered btn-bordered-primary">
       </form>
     </div>
@@ -92,10 +94,18 @@ title: Le Wagon Middleman boilerplate
         <div class="row">
           <div class="col-xs-4">
             <ul class="list-inline">
-              <li><a href=""><i class="fa fa-youtube"></i></a></li>
-              <li><a href=""><i class="fa fa-instagram"></i></a></li>
-              <li><a href=""><i class="fa fa-facebook"></i></a></li>
-              <li><a href=""><i class="fa fa-twitter"></i></a></li>
+              <li>
+              <% link_to "#" do %>
+              <i class="fa fa-youtube"></i>
+              <% end %>
+              </li>
+
+              <li>
+              <% link_to"#" do %> <i class="fa fa-instagram"></i><% end %></li>
+              <li>
+              <% link_to"#" do %> <i class="fa fa-facebook"></i><% end %></li>
+              <li>
+              <% link_to"#" do %> <i class="fa fa-twitter"></i><% end %></li>
             </ul>
           </div>
           <div class="col-xs-8 text-right">
@@ -130,4 +140,4 @@ title: Le Wagon Middleman boilerplate
     <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  </body>
+
